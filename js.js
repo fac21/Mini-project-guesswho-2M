@@ -18,9 +18,8 @@ const fac ={
     Sevda : {username : "Sevda Shukrieva", avator :"https://avatars.githubusercontent.com/u/63476393?v=4" },
     Craig : {username : "Craig MacLeod", avator : "https://avatars.githubusercontent.com/u/54359248?v=4" },
 
-    // Amy : {username : "Amy", avator :"https://avatars.githubusercontent.com/u/72794385?v=4"},
-    // Amy : {username : "Amy", avator :"https://avatars.githubusercontent.com/u/72794385?v=4"},
-    // Amy : {username : "Amy", avator :"https://avatars.githubusercontent.com/u/72794385?v=4"}
+    Nafisa : {username : "Nafisa", avator :""},
+   
 }
 
 const resetBtn = document.querySelector('button');
@@ -34,6 +33,9 @@ inputValue = document.querySelector("#guess-input").value;
 let usersKeysArray = Object.keys(fac);
 let userArray = [];
 for(let i=0; i<usersKeysArray.length; i++){
+    // if(inputValue == usersKeysArray[i]){
+    //     userArray.push(usersKeysArray[i])
+    // }
     if(inputValue == usersKeysArray[i][0]){
         userArray.push(usersKeysArray[i])
     } 
@@ -48,7 +50,7 @@ for(let i=0; i<userArray.length; i++){
     let mateName = document.createElement('p');
 
     newLi.append(img, mateName);
-
+    mateName.append(fac[userArray[i]].username)
     img.setAttribute('src', fac[userArray[i]].avator);
 
     matesList.appendChild(newLi);
@@ -63,6 +65,7 @@ console.log(userArray)
 
 resetBtn.addEventListener('click', reset)
 function reset() {
-    matesList.remove(newLi);
+    let liChild = newLi
+    matesList.remove(liChild);
     document.querySelector("#guess-input").value = '';
 }
