@@ -1,3 +1,6 @@
+var msg = new SpeechSynthesisUtterance();
+
+
 const form = document.querySelector('form');
 const matesList = document.querySelector(".mates");
 let inputValue;
@@ -54,12 +57,13 @@ for(let i=0; i<userArray.length; i++){
     img.setAttribute('src', fac[userArray[i]].avator);
 
     matesList.appendChild(newLi);
-
+    
+    msg.text = fac[userArray[i]].username;
+    speechSynthesis.speak(msg); 
 }
 
-console.log(inputValue)
-console.log(usersKeysArray)
-console.log(userArray)   
+
+
 
 });
 

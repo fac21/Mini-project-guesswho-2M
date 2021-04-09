@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 .stack-sm > * + *{
 margin-top: 0.5rem;
 }
@@ -13,8 +15,16 @@ header{
     height: 5rem;
     background-color: pink;
 }
-.mates {
-    display: grid;
-    grid-template-rows: auto;
-    align-items: flex-end;
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 3rem;
+}
+
+@media only screen and (min-width: 769px) {
+    .mates {
+        display: flex;
+    }
 }
