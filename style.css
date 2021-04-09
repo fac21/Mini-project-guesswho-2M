@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.stack-sm > * + *{
+margin-top: 0.5rem;
+}
+.stack-lg > * + *{
+    margin-top: 1rem;
+}
+header{
+    height: 5rem;
+    background-color: pink;
+}
+.mates {
+    display: grid;
+    grid-template-rows: auto;
+    align-items: flex-end;
+}
